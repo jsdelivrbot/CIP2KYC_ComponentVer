@@ -23,7 +23,6 @@ export default class Personal extends Component {
   }
 
   render() {
-    console.log('here?');
     let personalObj;
     let scopeNames = [];
     if (this.props.obj) {

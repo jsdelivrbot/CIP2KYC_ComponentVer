@@ -42,7 +42,6 @@ export default class App extends Component {
 
         {/* <Business key={BUSINESS} str={BUSINESS} obj={readME_3_2_BuisenessData} /> */}
         <Business key={BUSINESS} str={BUSINESS} obj={oneFXBusinessData} />
-        {console.log('ddd')}
         <Personal key={PERSONAL} str={PERSONAL} obj={readME_3_2_PersonalData} />
 
       </div>
