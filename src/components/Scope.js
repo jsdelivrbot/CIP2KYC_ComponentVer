@@ -47,7 +47,7 @@ export default class Scope extends Component {
           if (scopeProp === FLOWS) return <Flows str={FLOWS} key={FLOWS} obj={scopeObj[FLOWS]} />;
           if (scopeProp === PERM_TITL) return this.renderPermText(scopeObj[PERM_TITL]);
           if (scopeProp === PERM_TEXT) return this.renderPermText(scopeObj[PERM_TEXT]);
-          if (scopeProp === MORE_NODE) return <MORE_NODE key={MORE_NODE} obj={scopeObj[MORE_NODE]} />;
+          if (scopeProp === MORE_NODE) return <ModeNode key={MORE_NODE} obj={scopeObj[MORE_NODE]} />;
         })}
       </div>
     );
