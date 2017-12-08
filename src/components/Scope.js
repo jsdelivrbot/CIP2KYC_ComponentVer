@@ -41,6 +41,7 @@ export default class Scope extends Component {
     }
     return (
       <div>
+        <h2>{this.props.str}</h2>
         {scopeProps.map((scopeProp) => {
           if (scopeProp === DOCS) return <DOCS str={DOCS} key={DOCS} obj={scopeObj[DOCS]} />;
           if (scopeProp === FLOWS) return <Flows str={FLOWS} key={FLOWS} obj={scopeObj[FLOWS]} />;

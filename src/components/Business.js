@@ -32,6 +32,7 @@ export default class Buiseness extends Component {
     }
     return (
       <div>
+        <h1>{this.props.str}</h1>
         {scopeNames.map((scopeName) => {
           return (
             <Scope key={scopeName} str={scopeName} obj={businessObj[scopeName]} />
