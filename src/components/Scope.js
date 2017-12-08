@@ -45,11 +45,14 @@ export default class Scope extends Component {
       <div>
         <h2>{this.props.str}</h2>
         {scopeProps.map((scopeProp) => {
-          if (scopeProp === DOCS) return <Docs str={DOCS} key={DOCS} obj={scopeObj[DOCS]} />;
-          if (scopeProp === FLOWS) return <Flows str={FLOWS} key={FLOWS} obj={scopeObj[FLOWS]} />;
-          if (scopeProp === PERM_TITL) return this.renderPermText(scopeObj[PERM_TITL]);
-          if (scopeProp === PERM_TEXT) return this.renderPermText(scopeObj[PERM_TEXT]);
-          if (scopeProp === MORE_NODE) return <ModeNode str={MORE_NODE} key={MORE_NODE} obj={scopeObj[MORE_NODE]} />;
+          switch (scopeProp) {
+            case DOCS: return <Docs str={DOCS} key={DOCS} obj={scopeObj[DOCS]} />;
+            case FLOWS: return <Flows str={FLOWS} key={FLOWS} obj={scopeObj[FLOWS]} />;
+            case PERM_TITL: return this.renderPermText(scopeObj[PERM_TITL]);
+            case PERM_TEXT: return this.renderPermText(scopeObj[PERM_TITL]);
+            case MORE_NODE: return <ModeNode str={MORE_NODE} key={MORE_NODE} obj={scopeObj[MORE_NODE]} />;
+            default: break;
+          }
         })}
       </div>
     );
