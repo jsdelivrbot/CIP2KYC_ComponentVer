@@ -5,19 +5,20 @@ import _ from 'lodash';
 export default class Flows extends Component {
 	// assuming
 	// this.props.key = 'flows'
-	// this.props.val = objKeysAreFromNodeName
+	// this.props.obj = objKeysAreFromNodeName
 	// objKeysAreFromNodeName ex)
 	// keys aer from node ex) ACH-US
-	// vals are to nodes objs ex) {ACH_US : ~~ }, SYNAPSE-US
+	// objs are to nodes objs ex) {ACH_US : ~~ }, SYNAPSE-US
 
 	render() {
 		let objKeysAreFromNodeName;
 		let fromNodeNames = [];
-		if (this.props.val) {
-			// console.log('this.props.val: ', this.props.val);
-			objKeysAreFromNodeName = this.props.val;
+		if (this.props.obj) {
+			// console.log('this.props.obj: ', this.props.obj);
+			objKeysAreFromNodeName = this.props.obj;
 			fromNodeNames = Object.keys(objKeysAreFromNodeName);
-		}
+    }
+    console.log('key', this.props.str);
 		return (
 			<table className="table table-bordered">
 				<thead>
