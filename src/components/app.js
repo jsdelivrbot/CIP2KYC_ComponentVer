@@ -10,6 +10,7 @@ import oneFXScope from '../../sampleJsonData/oneFXScope'
 import multiFromTosScope from '../../sampleJsonData/multiFromTosScope'
 
 import readME_3_2_BuisenessData from '../../sampleJsonData/readME_3_2_BuisenessData'
+import oneFXBusinessData from '../../sampleJsonData/oneFXBusinessData'
 
 
 import Scope from './Scope';
@@ -33,7 +34,9 @@ export default class App extends Component {
         {/* <Scope obj={goalSetterScope} /> */}
         {/* <Scope obj={oneFXScope} /> */}
         {/* <Scope obj={multiFromTosScope} /> */}
-        <Business key={BUSINESS} str={BUSINESS} obj={readME_3_2_BuisenessData} />
+
+        {/* <Business key={BUSINESS} str={BUSINESS} obj={readME_3_2_BuisenessData} /> */}
+        <Business key={BUSINESS} str={BUSINESS} obj={oneFXBusinessData} />
 
       </div>
     );
