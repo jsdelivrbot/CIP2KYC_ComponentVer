@@ -1,19 +1,16 @@
 import React, { Component } from 'react';
 
 
-
-
-import readME_3_2_BuisenessData from '../../sampleJsonData/readME_3_2_BuisenessData'
-import readME_3_2_PersonalData from '../../sampleJsonData/readME_3_2_PersonalData'
+import readME_3_2_EntireJson from '../../sampleJsonData/readME_3_2_EntireJson'
+import oneFX_EntireJson from '../../sampleJsonData/oneFX_EntireJson'
 
 
 import Scope from './Scope';
 import Flows from './Flows';
 
 import UserType from './UserType';
+import CipTag from './CipTag';
 
-const BUSINESS = 'BUSINESS';
-const PERSONAL = 'PERSONAL';
 
 export default class App extends Component {
 
@@ -23,15 +20,20 @@ export default class App extends Component {
       data: {}
     }
   }
-  
 
   render() {
+
+    // let entireJsonObj = readME_3_2_EntireJson.v3;
+    let entireJsonObj = oneFX_EntireJson.v3;
+    let jsonProps = Object.keys(entireJsonObj);
+
     return (
       <div>
-
-        <UserType key={BUSINESS} str={BUSINESS} obj={readME_3_2_BuisenessData} />
-        <UserType key={PERSONAL} str={PERSONAL} obj={readME_3_2_PersonalData} />
-
+        {jsonProps.map((jsonProp) => {
+          return (
+            <CipTag key={jsonProp} str={jsonProp} obj={entireJsonObj[jsonProp]} />
+          );
+        })}
       </div>
     );
   }

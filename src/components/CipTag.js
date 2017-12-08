@@ -2,9 +2,16 @@ import React, { Component } from 'react';
 
 import Scope from './Scope';
 
+import UserType from './UserType';
 
 const BUSINESS = 'BUSINESS';
 const PERSONAL = 'PERSONAL';
+const STATES = 'states';
+const COUNTRIES = 'countries';
+const ACH_PREF = 'ach_preferences';
+const INTEREST_PREF = 'interest_preferences';
+const MAX_NODES = 'max_nodes';
+const OTHER_PREF = 'other_preferences';
 
 export default class CipTag extends Component {
   // parenet component: App (version v3)
@@ -27,17 +34,16 @@ export default class CipTag extends Component {
     }
     return (
       <div>
-        <h3>{this.props.str}</h3>
-        {scopeProps.map((scopeProp) => {
-          if (scopeProp === DOCS) return <Docs str={DOCS} key={DOCS} obj={scopeObj[DOCS]} />;
-          if (scopeProp === FLOWS) return <Flows str={FLOWS} key={FLOWS} obj={scopeObj[FLOWS]} />;
-          if (scopeProp === DOCS) return <Docs str={DOCS} key={DOCS} obj={scopeObj[DOCS]} />;
-          if (scopeProp === FLOWS) return <Flows str={FLOWS} key={FLOWS} obj={scopeObj[FLOWS]} />;
-          if (scopeProp === DOCS) return <Docs str={DOCS} key={DOCS} obj={scopeObj[DOCS]} />;
-          if (scopeProp === FLOWS) return <Flows str={FLOWS} key={FLOWS} obj={scopeObj[FLOWS]} />;
-          if (scopeProp === DOCS) return <Docs str={DOCS} key={DOCS} obj={scopeObj[DOCS]} />;
-          if (scopeProp === FLOWS) return <Flows str={FLOWS} key={FLOWS} obj={scopeObj[FLOWS]} />;
+        <h3>CIP TAG: {this.props.str}</h3>
+
+        {cipTagProps.map((cipProp) => {
+          switch (cipProp) {
+            case BUSINESS: return <UserType str={BUSINESS} key={BUSINESS} obj={cipTagObj[BUSINESS]} />;
+            case PERSONAL: return <UserType str={PERSONAL} key={PERSONAL} obj={cipTagObj[PERSONAL]} />;
+            default: break;
+          }
         })}
+
       </div>
     );
   }
