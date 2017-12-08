@@ -14,8 +14,14 @@ const PERM_TEXT = 'permission_description';
 const MORE_NODE = 'more_node';
 
 export default class Scope extends Component {
-  // assuming
-  // this.props.key = 'BUISINESS' or 'PERSONAL:
+  // parents: UserType ('BUISINESS' or 'PERSONAL')
+
+  // this.props.str: ex
+    // SEND|RECEIVE|2000|DAILY
+    // SEND|RECEIVE|10000|DAILY
+    // ...
+
+  // this.props.obj keys are listed above 
 
   renderPermTitl(title) {
     return (
@@ -37,7 +43,6 @@ export default class Scope extends Component {
     let scopeObj;
     let scopeProps = [];
     if (this.props.obj) {
-      // console.log('this.props.obj: ', this.props.obj);
       scopeObj = this.props.obj;
       scopeProps = Object.keys(scopeObj);
     }
