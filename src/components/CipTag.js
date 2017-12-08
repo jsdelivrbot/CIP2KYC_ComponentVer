@@ -14,35 +14,37 @@ const MAX_NODES = 'max_nodes';
 const OTHER_PREF = 'other_preferences';
 
 export default class CipTag extends Component {
-  // parent component: App (version v3)
+	// parent component: App (version v3)
 
-  // this.props.str: ex
-    // '1'
-    // '2'
-    // ...
+	// this.props.str: ex
+	// '1'
+	// '2'
+	// ...
 
-  // this.props.obj keys are listed above 
+	// this.props.obj keys are listed above
 
-  render() {
-    let cipTagObj;
-    let cipTagProps = [];
-    if (this.props.obj) {
-      cipTagObj = this.props.obj;
-      cipTagProps = Object.keys(cipTagObj);
-    }
-    return (
-      <div>
-        <h3>CIP TAG: {this.props.str}</h3>
+	render() {
+		let cipTagObj;
+		let cipTagProps = [];
+		if (this.props.obj) {
+			cipTagObj = this.props.obj;
+			cipTagProps = Object.keys(cipTagObj);
+		}
+		return (
+			<div>
+				<h3>CIP TAG: {this.props.str}</h3>
 
-        {cipTagProps.map((cipProp) => {
-          switch (cipProp) {
-            case BUSINESS: return <UserType str={BUSINESS} key={BUSINESS} obj={cipTagObj[BUSINESS]} />;
-            case PERSONAL: return <UserType str={PERSONAL} key={PERSONAL} obj={cipTagObj[PERSONAL]} />;
-            default: break;
-          }
-        })}
-
-      </div>
-    );
-  }
+				{cipTagProps.map((cipProp, idx) => {
+					switch (cipProp) {
+						case BUSINESS:
+							return <UserType key={idx} str={BUSINESS} obj={cipTagObj[BUSINESS]} />;
+						case PERSONAL:
+							return <UserType key={idx} str={PERSONAL} obj={cipTagObj[PERSONAL]} />;
+						default:
+							break;
+					}
+				})}
+			</div>
+		);
+	}
 }

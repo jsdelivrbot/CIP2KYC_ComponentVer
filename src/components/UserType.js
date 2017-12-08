@@ -14,22 +14,6 @@ export default class UserType extends Component {
     // SEND|RECEIVE|10000|DAILY
     // ...
 
-  renderPermTitl(title) {
-    return (
-      <div key={text}>
-        <p>{text}</p>
-      </div>
-    )
-  }
-
-  renderPermText(text) {
-    return (
-      <div key={text}>
-        <p>{text}</p>
-      </div>
-    )
-  }
-
   render() {
     let userTypeObj;
     let scopeNames = [];
@@ -40,9 +24,9 @@ export default class UserType extends Component {
     return (
       <div>
         <h1>{this.props.str}</h1>
-        {scopeNames.map((scopeName) => {
+        {scopeNames.map((scopeName, idx) => {
           return (
-            <Scope key={scopeName} str={scopeName} obj={userTypeObj[scopeName]} />
+            <Scope key={idx} str={scopeName} obj={userTypeObj[scopeName]} />
           );
         })}
       </div>

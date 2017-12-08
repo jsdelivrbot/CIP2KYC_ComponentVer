@@ -23,15 +23,15 @@ export default class App extends Component {
 
   render() {
 
-    // let entireJsonObj = readME_3_2_EntireJson.v3;
-    let entireJsonObj = oneFX_EntireJson.v3;
+    let entireJsonObj = readME_3_2_EntireJson.v3;
+    // let entireJsonObj = oneFX_EntireJson.v3;
     let jsonProps = Object.keys(entireJsonObj);
 
     return (
       <div>
-        {jsonProps.map((jsonProp) => {
+        {jsonProps.map((jsonProp, idx) => {
           return (
-            <CipTag key={jsonProp} str={jsonProp} obj={entireJsonObj[jsonProp]} />
+            <CipTag key={idx} str={jsonProp} obj={entireJsonObj[jsonProp]} />
           );
         })}
       </div>
