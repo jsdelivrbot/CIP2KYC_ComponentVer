@@ -14,9 +14,9 @@ const PERM_TEXT = 'permission_description';
 const MORE_NODE = 'more_node';
 
 export default class Scope extends Component {
-  // parents: UserType ('BUISINESS' or 'PERSONAL')
+  // parent component: UserType ('BUISINESS' or 'PERSONAL')
 
-  // this.props.str: ex
+  // this.props.str: ex)
     // SEND|RECEIVE|2000|DAILY
     // SEND|RECEIVE|10000|DAILY
     // ...

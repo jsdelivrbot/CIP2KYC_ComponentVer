@@ -14,21 +14,19 @@ const MAX_NODES = 'max_nodes';
 const OTHER_PREF = 'other_preferences';
 
 export default class CipTag extends Component {
-  // parenet component: App (version v3)
+  // parent component: App (version v3)
 
-  // assuming
-  // this.props.str = 1 or 2 (CIP Tag)
-  // this.props.obj contains
-    // BUISINESS
-    // PERSONAL
-    // States
+  // this.props.str: ex
+    // '1'
+    // '2'
     // ...
+
+  // this.props.obj keys are listed above 
 
   render() {
     let cipTagObj;
     let cipTagProps = [];
     if (this.props.obj) {
-      // console.log('this.props.obj: ', this.props.obj);
       cipTagObj = this.props.obj;
       cipTagProps = Object.keys(cipTagObj);
     }
