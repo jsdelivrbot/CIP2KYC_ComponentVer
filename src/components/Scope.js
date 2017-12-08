@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 
 import Flows from './Flows';
+import Docs from './Docs';
+import ModeNode from './ModeNode';
 
 
 const DOCS = 'docs';
@@ -47,7 +49,7 @@ export default class Scope extends Component {
           if (scopeProp === FLOWS) return <Flows str={FLOWS} key={FLOWS} obj={scopeObj[FLOWS]} />;
           if (scopeProp === PERM_TITL) return this.renderPermText(scopeObj[PERM_TITL]);
           if (scopeProp === PERM_TEXT) return this.renderPermText(scopeObj[PERM_TEXT]);
-          if (scopeProp === MORE_NODE) return <ModeNode key={MORE_NODE} obj={scopeObj[MORE_NODE]} />;
+          if (scopeProp === MORE_NODE) return <ModeNode str={MORE_NODE} key={MORE_NODE} obj={scopeObj[MORE_NODE]} />;
         })}
       </div>
     );
