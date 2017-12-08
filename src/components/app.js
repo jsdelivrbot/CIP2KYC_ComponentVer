@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 
 import readME_3_2_EntireJson from '../../sampleJsonData/readME_3_2_EntireJson'
-import oneFX_EntireJson from '../../sampleJsonData/oneFX_EntireJson'
+// import oneFX_EntireJson from '../../sampleJsonData/oneFX_EntireJson'
 
 
 import Scope from './Scope';
