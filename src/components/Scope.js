@@ -43,7 +43,7 @@ export default class Scope extends Component {
       <div>
         <h2>{this.props.str}</h2>
         {scopeProps.map((scopeProp) => {
-          if (scopeProp === DOCS) return <DOCS str={DOCS} key={DOCS} obj={scopeObj[DOCS]} />;
+          if (scopeProp === DOCS) return <Docs str={DOCS} key={DOCS} obj={scopeObj[DOCS]} />;
           if (scopeProp === FLOWS) return <Flows str={FLOWS} key={FLOWS} obj={scopeObj[FLOWS]} />;
           if (scopeProp === PERM_TITL) return this.renderPermText(scopeObj[PERM_TITL]);
           if (scopeProp === PERM_TEXT) return this.renderPermText(scopeObj[PERM_TEXT]);
