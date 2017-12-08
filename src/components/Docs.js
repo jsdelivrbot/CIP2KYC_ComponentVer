@@ -27,7 +27,6 @@ export default class Docs extends Component {
 	  option.social_docs.forEach((doc) => {
 	    subDocs.push(doc);
 	  });
-	  console.log(subDocs, 'subDocs');
 	  if (subDocs.length > 0) {
 	    return (
 	    	<div key={idx}>
@@ -49,14 +48,19 @@ export default class Docs extends Component {
   render() {
     let baseDocs;
     this.props.obj ? baseDocs = this.props.obj : baseDocs = null;
+    console.log(baseDocs);
     return (
       <div>
       	{_.map(baseDocs, (doc, idx) => {
-          let docOptions, subDocs = [];
+          let docOptions, title, description, subDocs = [];
           Array.isArray(doc) ? docOptions = doc : docOptions = doc.doc_options;
+          doc.docs_title ? title = <p>{doc.docs_title}</p> : null;
+          doc.docs_description ? description = <p>{doc.docs_description}</p> : null;
 	      		return (
 	      			<div key={idx}>
 	            <p>{idx}. Base Document</p>
+		            {title}
+		            {description}
 	            	{this.generateDocOptions(docOptions)}
 	            </div>
 	      		)
