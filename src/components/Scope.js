@@ -24,8 +24,8 @@ export default class Scope extends Component {
 
 	renderPermTitl(title) {
 		return (
-			<div key={text}>
-				<p>{text}</p>
+			<div key={title}>
+				<p>{title}</p>
 			</div>
 		);
 	}
@@ -55,9 +55,9 @@ export default class Scope extends Component {
 						case FLOWS:
               return <Flows key={idx} str={FLOWS} obj={scopeObj[FLOWS]} />;
 						case PERM_TITL:
-							return this.renderPermText(scopeObj[PERM_TITL]);
+              return this.renderPermTitl(scopeObj[PERM_TITL]);
 						case PERM_TEXT:
-							return this.renderPermText(scopeObj[PERM_TITL]);
+              return this.renderPermText(scopeObj[PERM_TEXT]);
 						case MORE_NODE:
               return <ModeNode key={idx} str={MORE_NODE} obj={scopeObj[MORE_NODE]} />;
 						default:
